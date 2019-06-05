@@ -12,5 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('chatroom.index');
 });
+
+Route::post('login', 'UserController@login');
+Route::get('logout', 'UserController@logout');
+
+Route::get('lounge', function () {
+    return view('chatroom.lounge');
+});
+Route::get('list', 'RoomController@list');
+Route::post('enter', 'RoomController@enter');
+Route::get('exit', 'RoomController@exit');
+Route::post('create', 'RoomController@create');
+Route::get('create', function () {
+    return view('chatroom.create');
+});
+
+Route::get('room', function () {
+    return view('chatroom.room');
+});
+
+Route::get('init', 'DiscussionController@init');

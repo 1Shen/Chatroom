@@ -1,0 +1,168 @@
+div {
+    /* border: 1px solid red; */
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Microsoft Yahei';
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* ----------------------------- */
+
+#container {
+    margin-top: 30px;
+}
+
+#list {
+    background: RGB(253, 253, 253);
+    border-radius: 7px;
+    color: #000;
+}
+
+#nav {
+    background: RGB(242, 242, 242);
+    padding: 10px 20px 10px 20px;
+    margin-top: 30px;
+    line-height: 30px;
+}
+
+#nav>button {
+    margin-right: 20px;
+}
+
+#avatar {
+    height: 80px;
+    width: 80px;
+}
+
+#avatar>img {
+    max-height: 64px;
+    max-width: 64px;
+}
+
+#exit,
+#name {
+    height: 32px;
+    line-height: 32px;
+}
+
+#search>input {
+    border: none;
+    border-radius: 5px;
+    padding: 2px 8px 2px 8px;
+    height: 30px;
+    line-height: 30px;
+    width: 300px;
+}
+
+.room {
+    padding: 10px 20px 10px 20px;
+    height: 40px;
+    /* border: 1px solid red; */
+}
+
+/* ----------------------------- */
+
+#create {
+    display: inline-block;
+    background: #fff;
+    border: 0.5px solid RGB(123, 123, 123);
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#create:hover {
+    background: RGB(230, 230, 230);
+    cursor: pointer;
+}
+
+#nav>span {
+    float: right;
+    color: RGB(123, 123, 123);
+    font-size: 13px;
+}
+
+#exit>a {
+    color: #fff;
+}
+
+#exit>a:hover {
+    color: bisque;
+}
+
+.room span,
+.room a {
+    padding-left: 5px;
+}
+
+.room span:hover {
+    cursor: default;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 120px;
+    min-height: 50px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px 10px 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.mem {
+    font-size: 14px;
+    height: 20px;
+    width: 100%;
+    line-height: 20px;
+}
+
+.member-title {
+    margin: -10px 0 3px 0;
+    font-size: 15px;
+    border-bottom: 0.3px solid gray;
+}
+
+.progress {
+    width: 100%;
+    background: RGB(242, 242, 242);
+    text-align: right;
+    font-size: 10px;
+    height: 15px;
+    color: #000;
+}
+
+.progress-bar {
+    margin-top: -13px;
+    height: 15px;
+}

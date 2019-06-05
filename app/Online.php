@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Online extends Model
 {
     protected $fillable = [
-        'name', 'style'
+        'uid', 'rid'
     ];
 }

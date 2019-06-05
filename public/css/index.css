@@ -1,0 +1,75 @@
+body {
+    background:#0a0a0a;
+    color:#fff;
+    font-size:16px;
+    font-family:'Microsoft Yahei';
+    letter-spacing:2px;
+    font-weight: 700;
+}
+
+/* ----------------------------- */
+
+#logo {
+    text-align: center;
+    height: 60%;
+}
+
+#name,
+#setting,
+#enter,
+#avatar {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ----------------------------- */
+
+#name>input {
+    border-radius: 12px;
+    border: none;
+    padding: 2px 8px 2px 8px;
+    width: 160px;
+}
+
+#setting>a,
+#enter>button {
+    color: #fff;
+}
+
+#setting>a:hover,
+#enter>button:hover{
+    color: bisque;
+    cursor: pointer;
+}
+
+#enter>button {
+    width: 200px;
+    padding: 2px;
+    background: #666;
+    border-radius: 12px;
+    line-height: 1.4;
+    font-size: 14px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+}
+
+#avatar {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 400px;
+    display: none;
+}
+
+.avatar {
+    max-height: 64px;
+    max-width: 64px;
+    padding: 12px;
+    opacity: 0.5;
+    font-size: 0;
+}
+
+.avatar:hover,
+.active {
+    opacity: 1;
+}

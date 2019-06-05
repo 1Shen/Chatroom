@@ -1,0 +1,52 @@
+#runner {
+	font-size: 20rem;
+	color: #fff;
+	font-family: 'Nixie One', cursive;
+	font-weight: 300;
+	text-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+@media(max-width: 920px) {
+	#runner {
+		font-size: 18rem;
+	}
+}
+
+@media(max-width: 830px) {
+	#runner {
+		font-size: 16rem;
+	}
+}
+
+@media(max-width: 740px) {
+	#runner {
+		font-size: 14rem;
+	}
+
+
+}
+
+@media(max-width: 650px) {
+	#runner {
+		font-size: 12rem;
+	}
+}
+
+@media(max-width: 560px) {
+	#runner {
+		font-size: 10rem;
+	}
+}
+
+@media(max-width: 470px) {
+	#runner {
+		font-size: 8rem;
+	}
+
+}
+
+@media(max-width: 390px) {
+	#runner {
+		font-size: 6rem;
+	}
+}
