@@ -11,7 +11,7 @@ const AVATAR = 'resource/image/avatar/';
 // 用户信息
 var user = {
     'name': null,
-    'address': 'ws://127.0.0.1:8000',
+    // 'address': 'ws://127.0.0.1:8000',
     'style': 'RGB(195,59,130)',
     'uid': null,
     'rid': '1'

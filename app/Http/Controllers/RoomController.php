@@ -166,15 +166,23 @@ class RoomController extends Controller
         $room = DB::table('rooms')
             ->where('rooms.id', $_SESSION['rid']);
         $owner = $room->value('rooms.owner_id');
-            
+
         if ($owner == $_SESSION['uid']) {
-            $candidates = DB::table('onlines')
+            $candidate = DB::table('onlines')
                 ->where('onlines.rid', $_SESSION['rid'])
-                ->select('onlines.uid');
-            $count = $candidates->count();
-            $candidates = $candidates->get();
-            if ($count == 1) {
+                ->where('onlines.uid', '<>', $owner)
+                ->select('onlines.uid')
+                ->first();
+
+            if (!$candidate) {
                 $room->update(['owner_id' => '1']);
+            } else {
+                $num = "";
+                foreach ($candidate as $index => $value) {
+                    $num .= $value;
+                }
+                $num = (int)$num;
+                $room->update(['owner_id' => $num]);
             }
         }
 

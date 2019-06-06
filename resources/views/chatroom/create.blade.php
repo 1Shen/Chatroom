@@ -39,57 +39,59 @@ if ($_SESSION['rid'] != 1) {
 <body>
     <div class="layui-container">
         <div class="layui-row">
-            <div class="layui-col-md1" style="height: 200px">
+            <div class="layui-col-md2" style="height: 200px">
             </div>
-            <div id="container" class="layui-col-md10">
-                <form class="layui-form">
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">房间名称</label>
-                        <div class="layui-input-block">
-                            <input id="name" type="text" name="name" required lay-verify="required" placeholder="请输入名称（20字以内）" autocomplete="off" class="layui-input" maxlength="20">
-                        </div>
+            <form action="" id="container" class="layui-col-md8">
+                <div class="layui-row">
+                    <div class="layui-col-md2">
+                        <div>房间名称</div>
                     </div>
-                    <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">房间描述</label>
-                        <div class="layui-input-block">
-                            <textarea id="description" name="description" placeholder="请输入内容（50字以内）" class="layui-textarea" maxlength="50"></textarea>
-                        </div>
+                    <div class="layui-col-md10">
+                        <input id="name" type="text" required placeholder="请输入名称（20字以内）" autocomplete="off" maxlength="20">
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">房间人数</label>
-                        <div class="layui-input-block">
-                            <select id="size" name="size" lay-verify="required">
-                                <option value=""></option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-md2">
+                        <div>房间描述</div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label"><i class="fa fa-music" aria-hidden="true"></i></label>
-                        <div class="layui-input-block">
-                            <select id="open" name="size" lay-verify="required">
-                                <option value="o">关</option>
-                                <option value="1">开</option>
-                            </select>
-                        </div>
+                    <div class="layui-col-md10">
+                        <textarea id="description" placeholder="请输入内容（50字以内）" maxlength="50"></textarea>
                     </div>
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit lay-filter="formDemo" onclick="createRoom()">立即提交</button>
-                            <button id="reset" type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        </div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-md2">
+                        <div>房间人数</div>
                     </div>
-                    <!-- <button onclick="createRoom()">aaa </button> -->
-                </form>
-            </div>
+                    <div class="layui-col-md10">
+                        <select id="size">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-col-md2">
+                        <div><i class="fa fa-music" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="layui-col-md10">
+                        <select id="open">
+                            <option value="0">关</option>
+                            <option value="1">开</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="button" class="layui-row">
+                    <button onclick="createRoom()">立即提交</button>
+                    <button id="reset" type="reset">重置</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
@@ -103,10 +105,6 @@ if ($_SESSION['rid'] != 1) {
 </script>
 
 <script>
-    layui.use('form', function() {
-        var form = layui.form;
-    });
-
     function createRoom() {
 
         var message = {
@@ -128,12 +126,7 @@ if ($_SESSION['rid'] != 1) {
             dataType: "json",
             success: function(response) {
                 console.log(response.errMsg);
-                if (response.errCode == 200) { // 创建成功
-                    window.location.href = "{{ url('room') }}";
-                } else { // 创建失败
-                    alert('创建失败');
-                    $('#reset').trigger('click');
-                }
+                $('#reset').trigger('click');
             }
         });
     }

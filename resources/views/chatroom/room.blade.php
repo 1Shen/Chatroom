@@ -37,7 +37,7 @@ if ($_SESSION['rid'] == 1) {
 </head>
 
 <body>
-
+    <a href="{{ url('exit') }}">array_diff_assoc</a>
 </body>
 
 <script>
@@ -46,6 +46,13 @@ if ($_SESSION['rid'] == 1) {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+</script>
+
+<!-- websocket支持检测 -->
+<script>
+    if (typeof(WebSocket) == 'undefined') {
+        alert('你的浏览器不支持 WebSocket ，推荐使用Google Chrome 或者 Mozilla Firefox');
+    }
 </script>
 
 <script>

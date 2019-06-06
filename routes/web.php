@@ -30,6 +30,7 @@ Route::get('create', function () {
 });
 
 Route::get('room', function () {
+    // return view('chatroom.client');
     return view('chatroom.room');
 });
 
