@@ -13,5 +13,11 @@ LoadModule proxy_wstunnel_module modules/mod_proxy_wstunnel.so
 ProxyPass /web/websocket/ ws://l:8080/web/websocket/
 ProxyPass / http://127.0.0.1:8080/
 
-# 4.进入Chatroom目录后，运行 php app\sock.php
+# 4.进入Chatroom目录后，运行 php app/Http/Controllers/Dura.php
 # 5.终端出现监听字样后浏览器输入localhost即可（浏览器应支持session和websocket） 
+
+
+
+# TODO:
+# 1.音乐插件引入
+# 2.insert操作实现
