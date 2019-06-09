@@ -303,9 +303,9 @@ session_start();
             function st() {
                 console.log("st work");
 
-                // n = prompt('请给自己取一个响亮的名字：');
+                n = prompt('请给自己取一个响亮的名字：');
 
-                // n = n.substr(0, 16);
+                n = n.substr(0, 16);
                 n = user.name;
 
                 if (!n) {
@@ -349,6 +349,7 @@ session_start();
                 //数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
 
                 ws.onmessage = function(msg) {
+                    console.log(msg);
 
                     eval('var da=' + msg.data);
 

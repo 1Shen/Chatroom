@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             // 用户昵称
             $table->string('name', 16);
             // 用户主题
-            $table->string('style')->default('pink');
+            $table->string('style');
             // 时间戳
             $table->timestamps();
         });

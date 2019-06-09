@@ -12,7 +12,6 @@ if ($_SESSION['rid'] == 1) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -37,16 +36,32 @@ if ($_SESSION['rid'] == 1) {
 </head>
 
 <body>
-    <a href="{{ url('exit') }}">array_diff_assoc</a>
-</body>
+    <div id="post_box" class="layui-fluid layui-container">
+        <div class="layui-col-md3" style="height: 150px"></div>
+        <div class="layui-col-md6">
+            <div id="title" class="layui-row">
+                <span id="room"></span>
+                <div id="menu">
+                    <a href=""><i class="fa fa-music" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0);" onclick="showList()"><i class="fa fa-user" aria-hidden="true"></i></a>
+                    <a href="{{ url('exit') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div id="talk" class="layui-row">
+                <textarea maxlength="140" placeholder="140字以内" required="required"></textarea>
+            </div>
+            <div id="post" class="layui-row">
+                <button>POST!</button>
+            </div>
+        </div>
+        <div id="user_list">
+            <div id="clear">清除@</div>
+        </div>
+    </div>
 
-<script>
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-</script>
+    <div id="talk_box" class="layui-container">
+    </div>
+</body>
 
 <!-- websocket支持检测 -->
 <script>
@@ -61,7 +76,8 @@ if ($_SESSION['rid'] == 1) {
         url: "{{ url('init') }}",
         dataType: "json",
         success: function(response) {
-            setMessage(response);
+            init1(response);
+            start();
         }
     });
 </script>

@@ -1,0 +1,215 @@
+body {
+    background:#0a0a0a;
+    color:#fff;
+    font-family:'Microsoft Yahei';
+}
+
+/* ----------------------------- */
+
+#post_box {
+    position: fixed;
+    top: 0;
+    height: 150px;
+    color: #0a0a0a;
+    background: #fff;
+    width: 100%;
+    z-index: 1;
+}
+
+#talk_box {
+    margin-top: 150px;
+}
+
+#post,
+#talk {
+    display: flex;
+    justify-content: center;
+}
+
+#title {
+    height: 24px;
+    margin: 0 100px;
+}
+
+/* ----------------------------- */
+
+#post>button {
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    height: 24px;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 400;
+    color: #777;
+    background: #fcfccc;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+#post>button:hover {
+    border: 1px solid #0a0a0a;
+    cursor: pointer;
+}
+
+/* ----------------------------- */
+
+#talk>textarea {
+    margin: 5px;
+    padding: 5px;
+    width: 340px;
+    height: 70px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+#talk>textarea::-webkit-scrollbar {
+    display: none;
+}
+
+/* ----------------------------- */
+
+#room {
+    color: rgb(153, 153, 153);
+    float: left;
+    margin: 0 5px;
+}
+
+#menu {
+    float: right;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+#menu>a {
+    margin: 0 2px;
+}
+
+#menu>a:hover {
+    cursor: pointer;
+    color: rgb(153, 153, 153);
+}
+
+/* ----------------------------- */
+
+#user_list {
+    min-height: 200px;
+    width: 200px;
+    margin-top: 150px;
+    padding: 5px;
+    color: #fff;
+    background: rgb(30, 30, 30);
+    border-radius: 5px;
+    /* border: 1px solid red; */
+}
+
+.mem,
+#clear {
+    font-size: 16px;
+    height: 25px;
+    width: 180px;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+.mem>span {
+    padding: 0 10px;
+}
+
+#clear:hover,
+.mem:hover {
+    cursor: pointer;
+    color: bisque;
+}
+
+/* ----------------------------- */
+
+#talk_box {
+    margin-top: 160px;
+    padding: 30px 300px;
+    font-size: 16px;
+}
+
+.message {
+    height: 30px;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+}
+
+.message>.left,
+.message>.right {
+    height: 30px;
+}
+
+.message>.left {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+
+.message>.right {
+    width: 100%;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.talk {
+    height: 90px;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+}
+
+.talk>.left {
+    height: 90px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.talk>.left>img {
+    height: 64px;
+    width: 64px;
+}
+
+.talk>.left>span {
+    height: 26px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.talk>.right {
+    height: 62px;
+    width: 450px;
+    border-radius:13px;
+    border:4px #fff solid;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    background:#000;
+    letter-spacing:1px;
+    color:#FFF;
+    padding:10px;
+}
+
+.talk>.right>.data {
+    height: 50px;
+}
+
+.talk>.right>.time {
+    float: right;
+    font-size: 13px;
+    height: 12px;
+}
+
+.talk>.right>.time>.layui-badge-dot {
+    margin: 0 5px;
+    line-height: 12px;
+}

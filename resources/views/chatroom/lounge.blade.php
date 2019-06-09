@@ -109,11 +109,10 @@ if ($_SESSION['rid'] != 1) {
                                 console.log(response.errMsg);
                                 if (response.errCode == 300) { // 已加入
                                     window.location.href = "{{ url('room') }}";
-                                    console.log('yijiaru');
                                 } else if (response.errCode == 200) { // 加入成功
                                     window.location.href = "{{ url('room') }}";
                                 } else { // 加入失败
-                                    alert('加入失败');
+                                    alert(response.errMsg);
                                 }
                             }
                         });

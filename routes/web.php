@@ -34,4 +34,4 @@ Route::get('room', function () {
     return view('chatroom.room');
 });
 
-Route::get('init', 'DiscussionController@init');
+Route::get('init', 'RoomController@init');

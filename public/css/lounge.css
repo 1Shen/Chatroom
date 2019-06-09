@@ -16,13 +16,13 @@ body {
 }
 
 #list {
-    background: RGB(253, 253, 253);
+    background: rgb(253, 253, 253);
     border-radius: 7px;
     color: #000;
 }
 
 #nav {
-    background: RGB(242, 242, 242);
+    background: rgb(242, 242, 242);
     padding: 10px 20px 10px 20px;
     margin-top: 30px;
     line-height: 30px;
@@ -68,7 +68,7 @@ body {
 #create {
     display: inline-block;
     background: #fff;
-    border: 0.5px solid RGB(123, 123, 123);
+    border: 0.5px solid rgb(123, 123, 123);
     border-radius: 10px;
     height: 30px;
     width: 100px;
@@ -77,13 +77,13 @@ body {
 }
 
 #create:hover {
-    background: RGB(230, 230, 230);
+    background: rgb(230, 230, 230);
     cursor: pointer;
 }
 
 #nav>span {
     float: right;
-    color: RGB(123, 123, 123);
+    color: rgb(123, 123, 123);
     font-size: 13px;
 }
 
@@ -155,7 +155,7 @@ body {
 
 .progress {
     width: 100%;
-    background: RGB(242, 242, 242);
+    background: rgb(242, 242, 242);
     text-align: right;
     font-size: 10px;
     height: 15px;

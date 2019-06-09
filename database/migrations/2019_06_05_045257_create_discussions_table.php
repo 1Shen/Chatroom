@@ -19,7 +19,7 @@ class CreateDiscussionsTable extends Migration
             $table->integer('send_id')->unsigned();
             $table->foreign('send_id')->references('id')->on('users');
             // 接受人id
-            $table->integer('receive_id')->unsigned()->default('0');
+            $table->integer('receive_id')->unsigned()->default('1');
             $table->foreign('receive_id')->references('id')->on('users');
             // 房间id
             $table->integer('room_id')->unsigned();

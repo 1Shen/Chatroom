@@ -12,18 +12,19 @@ const AVATAR = 'resource/image/avatar/';
 var user = {
     'name': null,
     // 'address': 'ws://127.0.0.1:8000',
-    'style': 'RGB(195,59,130)',
+    'style': 'rgb(195,59,130)',
     'uid': null,
-    'rid': '1'
+    'rid': '1',
+    'rname': null
 };
 
 // 头像主题列表
 var style = {
     // 'admin',
-    'RGB(195,59,130)': 'gg',
-    'RGB(202,132,0)': 'kanra',
-    'RGB(26,26,26)': 'setton',
-    'RGB(77,175,247)': 'tanaka',
-    'RGB(127,21,18)': 'zaika',
-    'RGB(71,129,71)': 'zawa',
+    'rgb(195,59,130)': 'gg',
+    'rgb(202,132,0)': 'kanra',
+    'rgb(26,26,26)': 'setton',
+    'rgb(77,175,247)': 'tanaka',
+    'rgb(127,21,18)': 'zaika',
+    'rgb(71,129,71)': 'zawa',
 };

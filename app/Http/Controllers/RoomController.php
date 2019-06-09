@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Room;
 use App\User;
 use App\Online;
+use phpDocumentor\Reflection\Location;
 
 session_start();
 
@@ -105,8 +106,12 @@ class RoomController extends Controller
                 $errCode = 200;
                 $errMsg = "enter success";
                 $_SESSION['rid'] = $request->input('rid');
+                $room = DB::table('rooms')
+                    ->where('id', $request->input('rid'));
+                $_SESSION['rname'] = $room->value('name');
+                $_SESSION['size'] = $room->value('size');
             } else {
-                $errMsg = "update fail";
+                $errMsg = "enter fail";
             }
         }
 
@@ -143,6 +148,8 @@ class RoomController extends Controller
                 $errCode = 200;
                 $errMsg = "create success";
                 $_SESSION['rid'] = $room['id'];
+                $_SESSION['rname'] = $room['name'];
+                $_SESSION['size'] = $room['size'];
 
                 $online = DB::table('onlines')
                     ->where('onlines.uid', $_SESSION['uid'])
@@ -193,13 +200,24 @@ class RoomController extends Controller
             $errCode = 200;
             $errMsg = "exit success";
             $_SESSION['rid'] = '1';
+            $_SESSION['rname'] = null;
         } else {
             $errMsg = "update fail";
         }
 
+        // return response()->json([
+        //     'errCode' => $errCode,
+        //     'errMsg' => $errMsg
+        // ]);
+        $url = url('lounge');
+        header("Location: $url");
+        exit;
+    }
+
+    public function init()
+    {
         return response()->json([
-            'errCode' => $errCode,
-            'errMsg' => $errMsg
+            'data' => $_SESSION
         ]);
     }
 }
