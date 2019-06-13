@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
-use App\User;
-use App\Online;
-use App\Discussion;
-use App\Room;
-
 session_start();
+
+$servername = 'localhost';
+$username = "root";
+$password = "";
+$conn = new \mysqli($servername, $username, $password, 'chatroom');
+
+$dura = new Dura('127.0.0.1', 8080);
+
+$dura->run();
 
 class Dura
 {
@@ -427,13 +428,12 @@ class Dura
             }
         } else {
             // 私聊
-            $message['receive'] = $receive['name'];
             socket_write($this->users[$sKey]['socket'], $str, strlen($str));
             socket_write($this->users[$rKey]['socket'], $str, strlen($str));
         }
 
         // 插入数据库
-        // $this->insertDB($send['id'], $receive, $room, $message['data']);
+        $this->insertDB($send['id'], $receive, $room, $message['data']);
     }
 
     // 传相应的IP与端口进行创建socket操作
@@ -487,15 +487,15 @@ class Dura
     }
 
     // 插入数据库
-    // public function insertDB($send, $receive, $room, $message)
-    // {
-    //     $ins = DB::table('discussions')->insert([
-    //         'send_id' => $send,
-    //         'receive_id' => $receive,
-    //         'room_id' => $room,
-    //         'message' => $message
-    //     ]);
-    // }
+    public function insertDB($send, $receive, $room, $message = ".")
+    {
+        $sql = "INSERT INTO discussions (send_id, receive_id, room_id, message)
+            VALUES ('$send', '$receive', '$room', '$message')";
+        global $conn;
+        if ($conn) {
+            $conn->query($sql);
+        }
+    }
 
     // 记录日志
     public function e($str)
@@ -505,7 +505,3 @@ class Dura
         echo iconv('utf-8', 'gbk//IGNORE', $str);
     }
 }
-
-$dura = new Dura('127.0.0.1', 8080);
-
-$dura->run();

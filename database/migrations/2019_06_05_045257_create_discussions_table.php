@@ -17,13 +17,13 @@ class CreateDiscussionsTable extends Migration
             $table->increments('id');
             // 发送人id
             $table->integer('send_id')->unsigned();
-            $table->foreign('send_id')->references('id')->on('users');
+            // $table->foreign('send_id')->references('id')->on('users');
             // 接受人id
             $table->integer('receive_id')->unsigned()->default('1');
-            $table->foreign('receive_id')->references('id')->on('users');
+            // $table->foreign('receive_id')->references('id')->on('users');
             // 房间id
             $table->integer('room_id')->unsigned();
-            $table->foreign('room_id')->references('id')->on('rooms');
+            // $table->foreign('room_id')->references('id')->on('rooms');
             // 内容
             $table->text('message', 512);
             // 时间戳
