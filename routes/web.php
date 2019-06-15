@@ -11,13 +11,16 @@
 |
 */
 
+// 首页
 Route::get('/', function () {
     return view('chatroom.index');
 });
 
+// 登录退出
 Route::post('login', 'UserController@login');
 Route::get('logout', 'UserController@logout');
 
+// 房间
 Route::get('lounge', function () {
     return view('chatroom.lounge');
 });
@@ -28,10 +31,10 @@ Route::post('create', 'RoomController@create');
 Route::get('create', function () {
     return view('chatroom.create');
 });
-
 Route::get('room', function () {
     // return view('chatroom.client');
     return view('chatroom.room');
 });
 
+// 进入房间后的初始化
 Route::get('init', 'RoomController@init');
