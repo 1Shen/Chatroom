@@ -1,7 +1,7 @@
 # Chatroom
 
 # 使用注意
-0.下载xampp并配置好对应的环境变量
+0.下载xampp并配置好对应的环境变量，并安装compose、laravel，具体配置xampp及laravel不再赘述，详情百度查看xampp配置及laravel学院的入门教程
 1.将文件夹放在xampp\htdocs\下
 2.修改xampp\apache\conf\extra\httpd-vhosts.conf的相关条目
     DocumentRoot "...xampp\htdocs\Chatroom\public"
@@ -11,11 +11,11 @@
         LoadModule proxy_http_module modules/mod_proxy_http.so
         LoadModule proxy_wstunnel_module modules/mod_proxy_wstunnel.so
     最后面添加：
-        ProxyPass /web/websocket/ ws://l:8080/web/websocket/
+        ProxyPass /web/websocket/   ws://l:8080/web/websocket/
         ProxyPass / http://127.0.0.1:8080/
-4.安装composer、laravel
-5.启动xampp的Apache和Mysql服务器后登录localhost/phpmyadmin建立数据库'chatroom'，具体配置xampp及laravel不再赘述，详情查看laravel学院的入门教程
-6.执行迁移文件构建数据表
+4.启动xampp的Apache和Mysql服务器后登录localhost/phpmyadmin建立数据库'chatroom'
+5.执行迁移文件构建数据表
+6.在'chatroom'中依次插入用户admin、房间大厅，内容任意（id为1）
 7.进入Chatroom目录后，运行 php app/Http/Controllers/Dura.php
 8.终端出现监听字样后浏览器输入localhost即可（浏览器应支持session和websocket） 
 
